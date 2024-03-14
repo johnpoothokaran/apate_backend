@@ -1,0 +1,5 @@
+{
+    "openai_api_key": "key1",
+    "openai_org_key": "key2",
+    "google_search_api_key": "key3"
+}
