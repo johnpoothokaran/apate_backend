@@ -30,12 +30,12 @@ class Pipeline():
 
         # runs preprocess functions
         context_collection = preprocess.Preprocess(self.keychain, self.testing)
-        context_collected = context_collection.run_google_searches(query)
+        context_collected = context_collection.get_context_for_gpt(query)
 
         print('CONTEXT COLLECTED:',type(context_collected)) # Dictionary object with search result fields
 
         # runs LLM ops functions
-        
+
 
         # runs postprocess functions
 
