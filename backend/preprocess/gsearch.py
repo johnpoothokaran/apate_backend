@@ -8,16 +8,17 @@ import json
 
 class GSearch():
 
-    def __init__(self, keychain, testing, top_n):
+    def __init__(self, keychain, testing, top_n) -> None:
         
         self.top_n_google_searches      = top_n
         self.keychain                   = keychain
         self.testing                    = testing
+        self.context_limiter            = 10000
 
         return None
     
 
-    def explore_search_result_top_n(self, data):
+    def explore_search_result_top_n(self, data) -> None:
         # Looking at data in search results (data = results)
         # Print some of the result metadata and the top 3 Search links found
         print(data.keys())
@@ -33,7 +34,7 @@ class GSearch():
         print('\n')
         return None
     
-    def run_google_searches(self, claim, additional_info = ''):
+    def run_google_searches(self, claim, additional_info = '') -> dict:
 
         '''
         Function to get google search results for a query
@@ -67,7 +68,7 @@ class GSearch():
         
         return data_google
     
-    def basic_parse_google_search_results(self, data):
+    def basic_parse_google_search_results(self, data) -> str:
         '''
         Runs basic parse of google search results
         '''
@@ -104,7 +105,7 @@ class GSearch():
 
     def extract_context_from_google_search_results(self, 
                                                    data, 
-                                                   mode = basic_parse_google_search_results):
+                                                   mode = basic_parse_google_search_results) -> str:
         
         '''
         Runs multiple extractions of data from google search results
@@ -119,6 +120,6 @@ class GSearch():
 
         context_for_gpt = combined_items_from_search_results
 
-        return context_for_gpt
+        return context_for_gpt[:self.context_limiter]
 
     

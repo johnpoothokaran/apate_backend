@@ -16,7 +16,7 @@ from backend.preprocess import gsearch
 
 class Preprocess():
 
-    def __init__(self, keychain, testing = False):
+    def __init__(self, keychain, testing = False) -> None:
         self.context_all                = None
         self.context_google_search      = None
         self.data_google                = None
@@ -26,7 +26,7 @@ class Preprocess():
 
     
     
-    def get_gsearch_context_for_gpt(self, claim, additional_info = ''):
+    def get_gsearch_context_for_gpt(self, claim, additional_info = '') -> str:
 
         # create gsearch class object
         gsearcher = gsearch.GSearch(self.keychain,
@@ -49,7 +49,7 @@ class Preprocess():
 
         return context_for_gpt
     
-    def get_context_for_gpt(self, claim, additional_info = ''):
+    def get_context_for_gpt(self, claim, additional_info = '') -> str:
 
         context = ''
         context += self.get_gsearch_context_for_gpt(claim, additional_info)
