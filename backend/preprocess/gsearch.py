@@ -5,20 +5,25 @@ Class defintion of Google search and parsing functionality
 
 import requests
 import json
+from bs4 import BeautifulSoup
+import requests
+from backend.preprocess.parse_page import parse_webpage
 
 class GSearch():
 
-    def __init__(self, keychain, testing, top_n) -> None:
+    def __init__(self, keychain, testing, top_n, test_timestamp) -> None:
         
         self.top_n_google_searches      = top_n
         self.keychain                   = keychain
         self.testing                    = testing
-        self.context_limiter            = 10000
+        self.context_limiter            = 40000
+        self.test_timestamp             = test_timestamp
 
         return None
     
 
     def explore_search_result_top_n(self, data) -> None:
+        # Not called in normal runtime
         # Looking at data in search results (data = results)
         # Print some of the result metadata and the top 3 Search links found
         print(data.keys())
@@ -68,36 +73,77 @@ class GSearch():
         
         return data_google
     
+    def extract_webpage_text_from_link(self, result_link):
+        parsed_result = parse_webpage(result_link)
+        return parsed_result
+    
+    def extract_search_items_for_context(self, this_item) -> str:
+
+        context_from_this_item = ''
+
+        error_count = 0
+        try:
+            page_text = self.extract_webpage_text_from_link(this_item['link'])
+            context_from_this_item += 'LINK: '+ this_item['link']
+            context_from_this_item += '\n'
+            context_from_this_item += 'PAGE EXTRACT: ' + page_text
+            context_from_this_item += '\n'
+        except KeyError:
+            error_count+=1
+        
+        try:
+            context_from_this_item += 'HTML TITLE: '+ this_item['htmlTitle']
+            context_from_this_item += '\n'
+        except KeyError:
+            error_count+=1
+
+        try:
+            context_from_this_item += 'SNIPPET: ' +this_item['snippet']
+            context_from_this_item += '\n'
+        except KeyError:
+            error_count+=1
+
+        try:
+            context_from_this_item += 'HTML SNIPPET: ' +this_item['htmlSnippet']
+            context_from_this_item += '\n'
+        except KeyError:
+            error_count+=1
+
+        #context_from_this_item += 'PAGEMAP: ' +json.dumps(this_item['pagemap'])
+        #context_from_this_item += '\n'
+       
+        if error_count == 4:
+            print("None of the keys are accessible.")
+        else:
+            if error_count >5:
+                print('Some keys are inaccessible:', error_count)
+
+        #print(context_from_this_item)
+        return context_from_this_item
+
+    
     def basic_parse_google_search_results(self, data) -> str:
         '''
         Runs basic parse of google search results
         '''
+        #print('DATA:',type(data))
+        #print('DATA:',data.keys())
+        #print(data['error'])
 
         context_for_gpt = ''
 
-        print('Exploring Top ',str(self.top_n_google_searches),' Search Links:')
-        for i in range(self.top_n_google_searches):
-            context_from_this_item = '\n\nSEARCH RESULT '+str(i+1)+':\n'
-
+        if 'error' in data.keys():
+            print('\n\n\nGOOGLE SEARCH ERROR\n\n\n')
+            print(data['error'])
+        print('LENGTH OF GOOGLE RESPONSE',len(data['items']))
+        print('Exploring Top ',min(self.top_n_google_searches,len(data['items'])),' Search Links:')
+        for i in range(min(self.top_n_google_searches,len(data['items']))):
+            #print('RESULT:',i)
+            context_for_gpt += '\n\nSEARCH RESULT '+str(i+1)+':\n'
+            
             this_item = data['items'][i]
-
-            context_from_this_item += 'LINK: '+ this_item['link']
-            context_from_this_item += '\n'
-
-            context_from_this_item += 'HTML TITLE: '+ this_item['htmlTitle']
-            context_from_this_item += '\n'
-
-            context_from_this_item += 'SNIPPET: ' +this_item['snippet']
-            context_from_this_item += '\n'
-
-            context_from_this_item += 'HTML SNIPPET: ' +this_item['htmlSnippet']
-            context_from_this_item += '\n'
-
-            context_from_this_item += 'PAGEMAP: ' +json.dumps(this_item['pagemap'])
-            context_from_this_item += '\n'
-
-            #print(context_from_this_item)
-            context_for_gpt += context_from_this_item
+            context_from_item = self.extract_search_items_for_context(this_item)
+            context_for_gpt += context_from_item
 
         return context_for_gpt
     

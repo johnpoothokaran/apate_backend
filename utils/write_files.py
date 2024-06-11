@@ -22,7 +22,7 @@ def write_text_to_file(filename, data_to_write):
 
 def write_json_to_file(filename, data_to_write):
     prepare_directory(filename)
-    with open(filename, "w") as json_file:
+    with open(filename, "a") as json_file:
         json.dump(data_to_write, json_file, indent=4)
 
     return None

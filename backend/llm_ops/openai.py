@@ -5,12 +5,14 @@ Class definition for Open AI/ChatGPT functionality
 import json
 import openai
 from openai import OpenAI
+from utils.read_files import read_text_from_file
 
 class GPTHandler():
 
-    def __init__(self, keychain, testing = False) -> None:
+    def __init__(self, keychain, testing = False, test_timestamp = None) -> None:
         self.keychain       = keychain
         self.testing        = testing
+        self.test_timestamp = test_timestamp
 
         self.max_tokens     = None
         self.model_type     = None
@@ -54,38 +56,15 @@ class GPTHandler():
     to only use a fixed context when evalulating the query
     """
     def get_verify_messages(self, query, context):
+        
         messages = []
-
-        system_message = '''
-        You are an assistant who helps users identify truth, lies, and misinformation.
-        You will be given the QUERY
-        You will be given a fixed CONTEXT. You will not use any prior knowledge.
-
-        The context may contain information obtained from several different APIs - including google search, social media etc.
-        Your response will be any one of the following 3 options in response to the QUERY
-        1 - TRUE
-        2 - FALSE
-        3 - UNCLEAR
-
-        For options 1 and 2, you will provide a one line explanation with the necessary information summarized from the context
-        For option 3, you will provide reasoning for the lack of clarity and suggest how to get more information to the user
-        In all 3 cases, you will name the most reliable sources from the provided context.
-
-        The response will be formatted as Python dictionary object, with these labels:
-        {
-            "STATEMENT" : "Input claim, NOT the name of the claim variable",
-            "LABEL" : "TRUE, FALSE, or UNCLEAR",
-            "EXPLANATION" : "One line explanation",
-            "SOURCES" : "List of most reliable sources from the provided context used to support label and explanation"
-        }
-        '''
-
-
+        system_message = read_text_from_file('prompts/system_message_v0.txt')
+        if system_message is None:
+            print('PROBLEM: PROMPT NOT FOUND')
 
         query = 'QUERY:'+query+'\n'
         context = 'CONTEXT'+context+'\n'
         user_message = query+context
-
 
         messages.append(self.get_system_message(system_message))
         messages.append(self.get_user_message(user_message))
@@ -95,6 +74,8 @@ class GPTHandler():
     def get_response_from_gpt(self, query, context):
 
         '''
+        INPUT: Query (string) and Context (string)
+        OUTPUT: 
         Takes in a query and context (e.g. Google search results)
         Returns GPT response categorizing query as true, false, or unclear based on context
         '''
