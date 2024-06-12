@@ -1,0 +1,10 @@
+Eating late at night always leads to weight gain:FALSE
+Cardiovascular exercise is the best way to improve heart health:TRUE
+All fats are bad for you and should be avoided:FALSE
+Drinking eight glasses of water per day is essential for hydration:FALSE
+Weightlifting will make women bulky:FALSE
+Protein shakes are necessary for muscle building:FALSE
+Running on a treadmill burns more calories than running outside:FALSE
+Eating small, frequent meals throughout the day boosts metabolism:FALSE
+Stretching before exercise prevents injury:FALSE
+Eating a balanced diet is important for overall health and well-being:TRUE

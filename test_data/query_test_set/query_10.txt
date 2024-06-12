@@ -1,0 +1,10 @@
+Vaccines are fully effective at preventing COVID-19 infection:UNCLEAR/FALSE
+Eating garlic can help prevent the common cold:TRUE
+Drinking plenty of water can cure COVID-19:FALSE
+Regular exercise can improve cardiovascular health:TRUE
+The Earth is flat:FALSE
+Applying lemon juice to your skin can cure acne:UNCLEAR/FALSE
+Joe Biden is president:TRUE
+George Bush is president:FALSE
+Narendra Modi is Prime minister:TRUE
+Climate change is a hoax:FALSE

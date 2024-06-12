@@ -1,0 +1,100 @@
+Vaccines cause autism:FALSE
+Eating carrots improves eyesight:TRUE
+Holding your breath underwater strengthens your lungs:FALSE
+Homeopathy can cure cancer:FALSE
+Sugar makes children hyperactive:FALSE
+Eating garlic can prevent the common cold:TRUE
+Flu shots give you the flu:FALSE
+Going outside with wet hair will make you catch a cold:FALSE
+Organic food is always healthier than conventional food:FALSE
+Drinking eight glasses of water a day is necessary for optimal health:FALSE
+The Great Wall of China is visible from space:FALSE
+Napoleon Bonaparte was extremely short:FALSE
+Christopher Columbus discovered America in 1492:TRUE
+The Boston Tea Party occurred in 1773:TRUE
+Albert Einstein failed math in school:FALSE
+The Vikings wore horned helmets:FALSE
+The Declaration of Independence was signed on July 4, 1776:FALSE
+Cleopatra was Egyptian royalty:FALSE
+The Titanic sank because it hit an iceberg:TRUE
+Julius Caesar was assassinated in the year 44 BCE:TRUE
+Mail-in voting leads to widespread voter fraud:FALSE
+Only citizens can vote in US elections:TRUE
+Dead people were found to have voted in the 2020 US presidential election:TRUE
+Non-citizens are allowed to vote in US elections:FALSE
+Dominion Voting Systems switched votes from one candidate to another in the 2020 US presidential election:FALSE
+All votes are counted on election day itself:FALSE
+Election results can be overturned by the Vice President:FALSE
+Only Democrats benefit from early voting practices:FALSE
+Provisional ballots are counted automatically in all states:FALSE
+The Electoral College is a group of people who meet to cast their votes for the US president and vice president:TRUE
+Playing football (soccer) can lead to concussions and head injuries:TRUE
+Basketball was invented in Canada:FALSE
+Cricket is the most popular sport in India:TRUE
+Michael Jordan won the NBA Most Valuable Player (MVP) award six times in his career:FALSE
+Baseball is America's national sport:FALSE/UNCLEAR
+The Olympic Games have been held every four years since ancient times:FALSE/UNCLEAR
+Wayne Gretzky is known as "The Great One" in ice hockey:TRUE
+A touchdown in American football is worth six points:TRUE
+Gymnasts must be at least 16 years old to compete in the Olympics:TRUE
+Tiger Woods has won the most major championships in golf history:FALSE
+Water boils at 100 degrees Celsius at sea level:TRUE
+The Earth is flat:FALSE
+The theory of evolution was proposed by Charles Darwin:TRUE
+Lightning never strikes the same place twice:FALSE
+The speed of light is approximately 300,000 kilometers per second:TRUE
+Humans only use 10% of their brains:FALSE
+The nucleus is the central part of an atom that contains protons and neutrons:TRUE
+Antibiotics are effective against viruses:FALSE
+The Earth revolves around the Sun:TRUE
+Climate change is caused by human activity:TRUE
+Socialism advocates for the abolition of private property:TRUE
+Capitalism promotes income equality:FALSE
+Anarchism advocates for the absence of government and hierarchy:TRUE
+Fascism supports individual liberties and democratic principles:FALSE
+Communism advocates for a classless society:TRUE
+Libertarianism opposes government intervention in both economic and social matters:TRUE
+Authoritarianism promotes individual freedoms and civil liberties:FALSE
+Environmentalism prioritizes the protection of the natural environment over economic growth:TRUE
+Conservatism advocates for rapid social change and progress:FALSE
+Liberalism prioritizes individual freedoms and civil liberties:TRUE
+All children develop at the same rate:FALSE
+Montessori education focuses on individualized learning:TRUE
+Homework is always beneficial for students' academic performance:FALSE/UNCLEAR
+Reading to children at an early age promotes language development:TRUE
+Online learning is ineffective for students' educational progress:FALSE/UNCLEAR
+Standardized testing accurately measures students' abilities:FALSE
+Bilingual education delays language development in children:FALSE
+Early childhood education is crucial for a child's cognitive development:TRUE
+Charter schools always outperform traditional public schools:FALSE
+Play-based learning is ineffective for academic achievement:FALSE
+Recycling plastic always reduces environmental impact:FALSE
+Renewable energy sources, such as solar and wind power, are inexhaustible:FALSE
+Sustainable agriculture practices prioritize soil health and biodiversity:TRUE
+Electric vehicles produce zero emissions:FALSE
+Deforestation contributes to climate change:TRUE
+The Earth's resources are unlimited and can sustain exponential growth:FALSE
+Carbon offsetting completely neutralizes the environmental impact of activities:FALSE
+Sustainable living requires significant sacrifices in quality of life:FALSE
+Overfishing threatens the stability of marine ecosystems:TRUE
+Greenhouse gas emissions are the primary cause of global warming:TRUE
+The Magna Carta was signed in 1215, limiting the power of the English monarchy:TRUE
+The French Revolution began in 1789, leading to the overthrow of the monarchy:TRUE
+The United States Constitution was written in 1776:FALSE
+The Bolshevik Revolution in Russia occurred in 1917, leading to the rise of the Soviet Union:TRUE
+The Cold War was a period of intense rivalry between the United States and China:FALSE
+The Industrial Revolution led to the emergence of capitalist economies:TRUE
+The Suffragette movement successfully achieved women's right to vote in the United States in the late 19th century:FALSE
+The Cuban Missile Crisis occurred in 1962, bringing the world to the brink of nuclear war:TRUE
+The Treaty of Versailles ended World War I in 1919:TRUE
+The Great Depression began in the United States in 1929:TRUE
+Eating late at night always leads to weight gain:FALSE
+Cardiovascular exercise is the best way to improve heart health:TRUE
+All fats are bad for you and should be avoided:FALSE
+Drinking eight glasses of water per day is essential for hydration:FALSE
+Weightlifting will make women bulky:FALSE
+Protein shakes are necessary for muscle building:FALSE
+Running on a treadmill burns more calories than running outside:FALSE
+Eating small, frequent meals throughout the day boosts metabolism:FALSE
+Stretching before exercise prevents injury:FALSE
+Eating a balanced diet is important for overall health and well-being:TRUE
